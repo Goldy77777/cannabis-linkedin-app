@@ -12,13 +12,7 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
 
-      - name: Debug Docker secrets
-        run: |
-          echo "Docker username length: ${#DOCKER_USERNAME}"
-          echo "Docker password length: ${#DOCKER_PASSWORD}"
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      # Debug Docker secrets step removed because context access is invalid in this way
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
