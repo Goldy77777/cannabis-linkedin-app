@@ -1,1 +1,31 @@
-# Kubernetes frontend deployment YAML
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cannabis-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cannabis-frontend
+  template:
+    metadata:
+      labels:
+        app: cannabis-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: <your-frontend-image>
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cannabis-frontend
+spec:
+  selector:
+    app: cannabis-frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
