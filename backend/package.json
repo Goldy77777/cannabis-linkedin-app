@@ -1,15 +1,21 @@
 {
-  "name": "cannabis-backend",
+  "name": "cannabis-linkedin-backend",
   "version": "1.0.0",
+  "description": "Backend for Cannabis Industry LinkedIn-style App",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "build": "echo 'No build step required for backend'"
+    "dev": "nodemon index.js"
   },
   "dependencies": {
-    "express": "^4.18.2",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "jsonwebtoken": "^9.0.0",
-    "bcryptjs": "^2.4.3"
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
   }
 }
